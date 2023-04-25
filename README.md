@@ -1,10 +1,12 @@
 # FastMRI Prostate
 
+[[`Paper`](https://arxiv.org/abs/2304.09254)] [[`Dataset`](https://fastmri.med.nyu.edu/)] [[`Github`](https://github.com/cai2r/fastMRI_prostate)] [[`BibTeX`](#cite)]
+
 ## Overview
 
 This repository contains code to facilitate the reconstruction of prostate T2 and DWI (Diffusion-Weighted Imaging) images from raw data in the fastMRI Prostate dataset. It includes reconstruction methods along with utilities for pre-processing and post-processing the data. 
 
-The module is intended to serve as a starting point for those who want to experiment and develop alternate reconstruction techniques.
+The package is intended to serve as a starting point for those who want to experiment and develop alternate reconstruction techniques.
 
 ## Installation
 
@@ -47,8 +49,21 @@ The reconstruction algorithms implemented in this package requires the following
 The run time of a single T2 reconstruction takes ~15 minutes while the Diffusion Weighted reconstructions take ~7 minutes on a multi-core CPU Linux machine with 64GB RAM. A bulk of the time is spent in applying GRAPPA weights to the undersampled raw kspace data.
 
 ## License
+fastMRI_prostate is MIT licensed, as found in [LICENSE file](https://github.com/cai2r/fastMRI_prostate/blob/main/LICENSE)
 
 ## Cite
+If you use the fastMRI Prostate data or code in your research, please use the following BibTeX entry.
+
+```
+@misc{tibrewala2023fastmri,
+      title={FastMRI Prostate: A Publicly Available, Biparametric MRI Dataset to Advance Machine Learning for Prostate Cancer Imaging}, 
+      author={Radhika Tibrewala and Tarun Dutt and Angela Tong and Luke Ginocchio and Mahesh B Keerthivasan and Steven H Baete and Sumit Chopra and Yvonne W Lui and Daniel K Sodickson and Hersh Chandarana and Patricia M Johnson},
+      year={2023},
+      eprint={2304.09254},
+      archivePrefix={arXiv},
+      primaryClass={physics.med-ph}
+}
+```
 
 ## Acknowedgements
 The code for the GRAPPA technique was based off [pygrappa](https://github.com/mckib2/pygrappa), and ESPIRiT maps provided in the dataset were computed using [espirit-python](https://github.com/mikgroup/espirit-python) 
