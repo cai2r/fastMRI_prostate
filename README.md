@@ -2,6 +2,9 @@
 
 [[`Paper`](https://arxiv.org/abs/2304.09254)] [[`Dataset`](https://fastmri.med.nyu.edu/)] [[`Github`](https://github.com/cai2r/fastMRI_prostate)] [[`BibTeX`](#cite)]
 
+### Updates
+02-02-2024: Updated [files](https://github.com/cai2r/fastMRI_prostate/pull/5) for slice-, volume-, exam-level labels for T2 and Diffusion sequences in the [fastMRI prostate dataset](https://fastmri.med.nyu.edu/).
+
 ## Overview
 
 This repository contains code to facilitate the reconstruction of prostate T2 and DWI (Diffusion-Weighted Imaging) images from raw data in the fastMRI Prostate dataset. It includes reconstruction methods along with utilities for pre-processing and post-processing the data. 
