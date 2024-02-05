@@ -24,18 +24,17 @@ def t2_reconstruction(kspace_data: np.ndarray, calib_data: np.ndarray, hdr: str)
     im_final: numpy.ndarray
         Reconstructed image with shape (num_slices, 320, 320)
     """
-    num_aves = kspace_data.shape[0]
-    num_slices = kspace_data.shape[1]
-    num_coils = kspace_data.shape[2]
-    num_ro = kspace_data.shape[3]
-    num_pe = kspace_data.shape[4]
-    num_pe_cal = calib_data.shape[3]
+    num_avg, num_slices, num_coils, num_ro, num_pe = kspace_data.shape
     
     # Calib_data shape: num_slices, num_coils, num_pe_cal
     grappa_weight_dict = {}
+    grappa_weight_dict_2 = {}
 
     kspace_slice_regridded = kspace_data[0, 0, ...]
     grappa_obj = Grappa(np.transpose(kspace_slice_regridded, (2, 0, 1)), kernel_size=(5, 5), coil_axis=1)
+
+    kspace_slice_regridded_2 = kspace_data[1, 0, ...]
+    grappa_obj_2 = Grappa(np.transpose(kspace_slice_regridded_2, (2, 0, 1)), kernel_size=(5, 5), coil_axis=1)
     
     # calculate GRAPPA weights
     for slice_num in range(num_slices):
@@ -43,23 +42,30 @@ def t2_reconstruction(kspace_data: np.ndarray, calib_data: np.ndarray, hdr: str)
         grappa_weight_dict[slice_num] = grappa_obj.compute_weights(
             np.transpose(calibration_regridded, (2, 0 ,1))
         )
+        grappa_weight_dict_2[slice_num] = grappa_obj_2.compute_weights(
+            np.transpose(calibration_regridded, (2, 0 ,1))
+        )
 
     # apply GRAPPA weights
     kspace_post_grappa_all = np.zeros(shape=kspace_data.shape, dtype=complex)
-    for average in range(num_aves):
+
+    for average, grappa_obj, grappa_weight_dict in zip(
+        [0, 1, 2],
+        [grappa_obj, grappa_obj_2, grappa_obj],
+        [grappa_weight_dict, grappa_weight_dict_2, grappa_weight_dict]
+    ):
         for slice_num in range(num_slices):
             kspace_slice_regridded = kspace_data[average, slice_num, ...]
             kspace_post_grappa = grappa_obj.apply_weights(
                 np.transpose(kspace_slice_regridded, (2, 0, 1)),
                 grappa_weight_dict[slice_num]
             )
-            kspace_post_grappa = np.moveaxis(np.moveaxis(kspace_post_grappa, 0,1),1,2)
-            kspace_post_grappa_all[average][slice_num] = kspace_post_grappa
+            kspace_post_grappa_all[average, slice_num, ...] = np.moveaxis(np.moveaxis(kspace_post_grappa, 0, 1), 1, 2)
 
     # recon image for each average
-    im = np.zeros((num_aves, num_slices, num_ro, num_ro))
-    for average in range(num_aves): 
-        kspace_grappa = kspace_post_grappa_all[0,:,:,:,:]
+    im = np.zeros((num_avg, num_slices, num_ro, num_ro))
+    for average in range(num_avg): 
+        kspace_grappa = kspace_post_grappa_all[average, ...]
         kspace_grappa_padded = zero_pad_kspace_hdr(hdr, kspace_grappa)
         im[average] = create_coil_combined_im(kspace_grappa_padded)
 
