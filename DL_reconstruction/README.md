@@ -15,7 +15,7 @@ To run the model, you can use the following commands for training and testing:
 ### Training
 
 ```bash
-python train_varnet_demo.py --mode train --data_path [path_to_data] --bvalue b50 --test_path [path_to_test_data] --state_dict_file [path_to_checkpoint_for_testing] --batch_size 1 --num_workers 4
+python train_varnet_prostate.py --mode train --data_path [path_to_data] --bvalue b50 --test_path [path_to_test_data] --state_dict_file [path_to_checkpoint_for_testing] --batch_size 1 --num_workers 4
 ```
 
 Replace `[script_name]` with the name of your script, `[path_to_data]` with the path to your training data, `[path_to_test_data]` with the path to your testing data, and `[path_to_checkpoint_for_testing]` with the path to a model checkpoint file if you have one for testing.
@@ -23,7 +23,7 @@ Replace `[script_name]` with the name of your script, `[path_to_data]` with the 
 ### Testing
 
 ```bash
-python train_varnet_demo.py --mode test --data_path [path_to_data] --bvalue b1000 --test_path [path_to_test_data] --state_dict_file [path_to_checkpoint] --batch_size 1 --num_workers 4
+python train_varnet_prostate.py --mode test --data_path [path_to_data] --bvalue b1000 --test_path [path_to_test_data] --state_dict_file [path_to_checkpoint] --batch_size 1 --num_workers 4
 ```
 
 Ensure you specify the `--state_dict_file` argument during testing to provide the path to your model checkpoint.
