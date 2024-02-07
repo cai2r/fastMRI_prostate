@@ -3,7 +3,7 @@
 [[`Paper`](https://arxiv.org/abs/2304.09254)] [[`Dataset`](https://fastmri.med.nyu.edu/)] [[`Github`](https://github.com/cai2r/fastMRI_prostate)] [[`BibTeX`](#cite)]
 
 ### Updates
-02-07-2024: Updated [files](https://github.com/cai2r/fastMRI_prostate/pull/9) for slice-, volume-, exam-level labels and their paths for T2 and Diffusion sequences in the [fastMRI prostate dataset](https://fastmri.med.nyu.edu/).
+02-07-2024: Updated [files](https://github.com/cai2r/fastMRI_prostate/pull/11) for slice-, volume-, exam-level labels and their paths for T2 and Diffusion sequences in the [fastMRI prostate dataset](https://fastmri.med.nyu.edu/).
 
 ## Overview
 
