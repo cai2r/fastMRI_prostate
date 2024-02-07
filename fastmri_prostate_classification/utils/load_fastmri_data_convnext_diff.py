@@ -55,11 +55,6 @@ class Dataset(data.Dataset):
             data = data[data['data_split'] == 'test'].reset_index(drop = True) 
             self.aug = 0
 
-        #! remove  make directory to store pngs of training images, remove it if it exists already 
-        self.trainmake = rundir + '/trainims'
-        if os.path.exists(self.trainmake):
-            shutil.rmtree(self.trainmake)
-        os.mkdir(self.trainmake)
 
         for i in range(0,len(data)):           
             pt_id = data['fastmri_pt_id'].iloc[i]  
@@ -121,11 +116,6 @@ class Dataset(data.Dataset):
         
         #! remove  save image PNG after normalisation in train_dir so we can glance through them and make sure they look ok
         sl = self.slice_num[index] 
-        fig = plt.figure(figsize=(5,5))
-        plt.imshow(b1500_224_normalised)
-        if self.saveims and self.istrain and (index%100 == 0):
-            fig.savefig(self.trainmake + '/' + str(self.nums[index]) + '_' + str(op_list) + '_sl_' + str(sl) + '.png', bbox_inches = 'tight')
-        plt.close('all')
         
         slice_tensor1 = torch.FloatTensor(b1500_224_normalised)                       
         slice_tensor2 = torch.FloatTensor(adc_224_normalised)                       
