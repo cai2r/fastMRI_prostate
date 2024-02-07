@@ -63,7 +63,7 @@ class Dataset(data.Dataset):
         for i in range(0,len(data)):           
             pt_id = data['fastmri_pt_id'].iloc[i]  
             file_t2 = data['fastmri_rawfile'].iloc[i]  
-            fol_t2 =  os.path.join(data['folder'].iloc[i] , str(pt_id).zfill(3))
+            fol_t2 =  os.path.join(data['folder'].iloc[i])
             path_t2 = os.path.join(datapath, fol_t2, file_t2)
             self.paths_t2.append(path_t2)                          
             label_PIRADS = data['PIRADS'].iloc[i]                   
