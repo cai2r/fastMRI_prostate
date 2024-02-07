@@ -14,7 +14,7 @@ model_args:
       weight_decay: 0.0001                  # 1e-04
       amsgrad: True                         # True to use amsgrad https://www.fast.ai/posts/2018-07-02-adam-weight-decay.html https://openreview.net/forum?id=ryQu7f-RZ
 data:
-      datasheet: "../../fastmri_prostate/data/t2_slice_level_labels.csv" 
+      datasheet: "../fastmri_prostate/data/t2_slice_level_labels.csv" 
       norm_type: 2                         # 1 = percentile clip, 2 = standardisation, 3 = min-max-scaling, 4 = Gaussian norm 
       data_location: "/path/to/fastmri_prostate_data/"
 training:
