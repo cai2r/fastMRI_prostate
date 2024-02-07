@@ -3,7 +3,7 @@
 [[`Paper`](https://arxiv.org/abs/2304.09254)] [[`Dataset`](https://fastmri.med.nyu.edu/)] [[`Github`](https://github.com/cai2r/fastMRI_prostate)] [[`BibTeX`](#cite)]
 
 ### Updates
-02-04-2024: Updated [files](https://github.com/cai2r/fastMRI_prostate/pull/6) for slice-, volume-, exam-level labels for T2 and Diffusion sequences in the [fastMRI prostate dataset](https://fastmri.med.nyu.edu/).
+02-07-2024: Updated [files](https://github.com/cai2r/fastMRI_prostate/pull/11) for slice-, volume-, exam-level labels and their paths for T2 and Diffusion sequences in the [fastMRI prostate dataset](https://fastmri.med.nyu.edu/).
 
 ## Overview
 
@@ -33,7 +33,7 @@ The repository is centered around the ```fastmri_prostate``` package. The follow
 
 ```fastmri_prostate_recon.py``` contains code to read files from the dataset and call the T2 and DWI reconstruction functions for a single h5 file. 
 
-```fastmri_prostate_tutorial.ipynb``` walks through an example of loading a raw h5 file from the fastMRI prostate dataset and displaying the reconstructions
+```fastmri_prostate_tutorial.ipynb``` walks through an example of loading a h5 file from the fastMRI prostate dataset and reconstructing T2/DW images.
 
 To reconstruct T2/DW images from the fastMRI prostate raw data, users can [download the dataset](https://fastmri.med.nyu.edu/) and run ```fastmri_prostate_recon.py``` with appropriate arguments, specifying the path to the root of the downloaded dataset, output path to store reconstructions, and the sequence (T2, DWI, or both).
 ```
