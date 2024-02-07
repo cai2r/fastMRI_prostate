@@ -19,7 +19,7 @@ The code requires `python >= 3.9` and uses [torch](https://pytorch.org/docs/stab
  python -u train_t2.py \ --config_file configs/t2_final.yaml \ --index_seed [seed]
 ```
 
-Replace `[seed]` with a seed configuration. Set hyperparameters and path to your fastMRI prostate data ("data_location" field) in the [config file](https://github.com/cai2r/fastMRI_prostate/blob/classification_code_review/fastmri_prostate_classification/configs/t2_final.yaml)
+Replace `[seed]` with a seed configuration number between 1-10. Set hyperparameters and path to your fastMRI prostate data ("data_location" field) in the [config file](https://github.com/cai2r/fastMRI_prostate/blob/classification_code_review/fastmri_prostate_classification/configs/t2_final.yaml)
 
 ### Training: To run the classification model on Diffusion images:
 
