@@ -5,11 +5,14 @@
 ### Updates
 02-07-2024: Updated [files](https://github.com/cai2r/fastMRI_prostate/pull/11) for slice-, volume-, exam-level labels and their paths for T2 and Diffusion sequences in the [fastMRI prostate dataset](https://fastmri.med.nyu.edu/).
 
+[Classification](https://github.com/cai2r/fastMRI_prostate/tree/main/fastmri_prostate_classification): The classification folder contains code for training deep learning models to detect clinically significant prostate cancer.
+[Reconstruction](https://github.com/cai2r/fastMRI_prostate/tree/main/DL_reconstruction): The reconstruction folder contains code for training deep learning models for reconstructing diffusion MRI images from undersampled k-space.
+
 ## Overview
 
-This repository contains code to facilitate the reconstruction of prostate T2 and DWI (Diffusion-Weighted Imaging) images from raw data in the fastMRI Prostate dataset. It includes reconstruction methods along with utilities for pre-processing and post-processing the data. 
+This repository contains code to facilitate the reconstruction of prostate T2 and DWI (Diffusion-Weighted Imaging) images from raw (k-space) data from the fastMRI Prostate dataset. It includes reconstruction methods along with utilities for pre-processing and post-processing the data. 
 
-The package is intended to serve as a starting point for those who want to experiment and develop alternate reconstruction techniques.
+The package is intended to serve as a starting point for those who want to experiment and develop alternate reconstruction techniques. 
 
 ## Installation
 
