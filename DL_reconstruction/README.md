@@ -28,6 +28,7 @@ python train_varnet_prostate.py --mode test --data_path [path_to_data] --bvalue 
 
 Ensure you specify the `--state_dict_file` argument during testing to provide the path to your model checkpoint.
 
+Note: For deep learning recon of the T2-weighted data please refer to the [fastMRI VarNet](https://github.com/facebookresearch/fastMRI/tree/main/fastmri_examples/varnet) implementation.
 ## Configuration
 
 The script accepts various command-line arguments to customize the data paths, model parameters, and training settings. Refer to the source code for a complete list of available options.
