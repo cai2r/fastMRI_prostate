@@ -21,9 +21,7 @@ The code requires `python >= 3.9`
 Install FastMRI Prostate: clone the repository locally and install with
 
 ```
-git clone git@github.com:tarund1996/fastmri_prostate_test.git
-cd fastmri_prostate_test
-pip install -e .
+pip install git+https://github.com/cai2r/fastMRI_prostate.git
 ```
 
 ## Usage
