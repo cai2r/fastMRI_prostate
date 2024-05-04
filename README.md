@@ -1,6 +1,6 @@
 # FastMRI Prostate
 
-[[`Paper`](https://arxiv.org/abs/2304.09254)] [[`Dataset`](https://fastmri.med.nyu.edu/)] [[`Github`](https://github.com/cai2r/fastMRI_prostate)] [[`BibTeX`](#cite)]
+[[`Paper`](https://www.nature.com/articles/s41597-024-03252-w)] [[`Dataset`](https://fastmri.med.nyu.edu/)] [[`Github`](https://github.com/cai2r/fastMRI_prostate)] [[`BibTeX`](#cite)]
 
 ### Updates
 02-07-2024: Updated [files](https://github.com/cai2r/fastMRI_prostate/pull/11) for slice-, volume-, exam-level labels and their paths for T2 and Diffusion sequences in the [fastMRI prostate dataset](https://fastmri.med.nyu.edu/).
@@ -61,13 +61,15 @@ fastMRI_prostate is MIT licensed, as found in [LICENSE file](https://github.com/
 If you use the fastMRI Prostate data or code in your research, please use the following BibTeX entry.
 
 ```
-@misc{tibrewala2023fastmri,
-      title={FastMRI Prostate: A Publicly Available, Biparametric MRI Dataset to Advance Machine Learning for Prostate Cancer Imaging}, 
-      author={Radhika Tibrewala and Tarun Dutt and Angela Tong and Luke Ginocchio and Mahesh B Keerthivasan and Steven H Baete and Sumit Chopra and Yvonne W Lui and Daniel K Sodickson and Hersh Chandarana and Patricia M Johnson},
-      year={2023},
-      eprint={2304.09254},
-      archivePrefix={arXiv},
-      primaryClass={physics.med-ph}
+@article{tibrewala2024fastmri,
+  title={FastMRI Prostate: A public, biparametric MRI dataset to advance machine learning for prostate cancer imaging},
+  author={Tibrewala, Radhika and Dutt, Tarun and Tong, Angela and Ginocchio, Luke and Lattanzi, Riccardo and Keerthivasan, Mahesh B and Baete, Steven H and Chopra, Sumit and Lui, Yvonne W and Sodickson, Daniel K and others},
+  journal={Scientific Data},
+  volume={11},
+  number={1},
+  pages={404},
+  year={2024},
+  publisher={Nature Publishing Group UK London}
 }
 ```
 
