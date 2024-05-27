@@ -1,7 +1,8 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='fastMRI Prostate',
+    name='fastmri_prostate',
+    packages=find_packages(),
     version='1.0',
     description='A large scale dataset and reconstruction script of both raw prostate MRI measurements and images',
     install_requires=[
